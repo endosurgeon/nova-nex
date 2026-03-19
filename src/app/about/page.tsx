@@ -1,31 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 export default function About() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            Nova
-          </Link>
-          <nav className="flex gap-6">
-            {['首页', '关于', '产品', '联系'].map((item) => (
-              <Link 
-                key={item}
-                href={item === '首页' ? '/' : `/${item === '关于' ? 'about' : item === '产品' ? 'products' : 'contact'}`}
-                className={`text-gray-600 hover:text-indigo-600 transition-colors ${item === '关于' ? 'text-indigo-600 font-medium' : ''}`}
-              >
-                {item}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </header>
-
       {/* Hero */}
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -101,13 +80,6 @@ export default function About() {
           </motion.div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-8 px-6 bg-gray-900 text-white mt-20">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-400">© 2026 Nova. All rights reserved.</p>
-        </div>
-      </footer>
     </main>
   )
 }

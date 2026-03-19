@@ -6,36 +6,6 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
-          >
-            Nova
-          </motion.div>
-          <nav className="flex gap-6">
-            {['首页', '关于', '产品', '联系'].map((item, i) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * (i + 1) }}
-              >
-                <Link 
-                  href={item === '首页' ? '/' : `/${item === '关于' ? 'about' : item === '产品' ? 'products' : 'contact'}`}
-                  className="text-gray-600 hover:text-indigo-600 transition-colors"
-                >
-                  {item}
-                </Link>
-              </motion.div>
-            ))}
-          </nav>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
@@ -111,13 +81,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-8 px-6 bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-400">© 2026 Nova. All rights reserved.</p>
-        </div>
-      </footer>
     </main>
   )
 }
